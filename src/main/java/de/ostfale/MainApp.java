@@ -16,7 +16,7 @@ public class MainApp extends Application {
         log.info("Start Application...");
         MainHandler mainHandler = new MainHandler();
         Scene scene = new Scene(mainHandler.getUiRoot(), 1200, 800);
-        scene.getStylesheets().add("/css/style.css");
+        scene.getStylesheets().add("/static/css/style.css");
         stage.setScene(scene);
         stage.show();
     }

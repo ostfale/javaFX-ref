@@ -1,0 +1,19 @@
+
+.root {
+    -bg-gradient: linear-gradient(to right, #031b1c, #142b3d);
+    -bg-button: #2f3333;
+
+    -hover: #3f5d5d;
+}
+
+.background-pane {
+    -fx-background-color: -bg-gradient;
+}
+
+.button{
+    -fx-background-color: -bg-button;
+}
+
+.button:hover{
+    -fx-background-color: -hover;
+}

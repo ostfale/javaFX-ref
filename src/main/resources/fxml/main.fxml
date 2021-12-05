@@ -1,42 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane fx:id="apMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../static/css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.ostfale.app.MainController">
-    <children>
-        <MenuBar fx:id="mBar" layoutX="14.0" layoutY="14.0" prefHeight="29.0" prefWidth="598.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#closeApplication" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
-        <ToolBar layoutX="14.0" layoutY="30.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="30.0">
-            <items>
-                <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#closeApplication" styleClass="btn-exit">
-                    <graphic>
-                        <FontIcon iconLiteral="fa-close" iconSize="16" />
-                    </graphic>
-                </Button>
-            </items>
-        </ToolBar>
-    </children>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background-pane" stylesheets="@../static/css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.ostfale.app.MainController">
+   <children>
+      <BorderPane layoutX="189.0" layoutY="63.0" prefHeight="200.0" prefWidth="736.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+         <top>
+            <AnchorPane BorderPane.alignment="CENTER">
+               <children>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#viewDashboard" prefHeight="73.0" prefWidth="100.0" text="Dashboard" textFill="#f0e9e9" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <graphic>
+                        <FontIcon iconColor="#e2d2d2" iconLiteral="fa-dashboard" iconSize="24" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#closeApplication" prefHeight="73.0" prefWidth="100.0" stylesheets="@../static/css/style.css" text="Exit" textFill="#e81b1b" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                     <graphic>
+                        <FontIcon iconColor="#e81b1b" iconLiteral="fa-close" iconSize="24" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" layoutX="25.0" layoutY="25.0" mnemonicParsing="false" onAction="#viewProjects" prefHeight="73.0" prefWidth="100.0" text="Project" textFill="#f0e9e9" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="15.0">
+                     <graphic>
+                        <FontIcon iconColor="#e2d2d2" iconLiteral="fas-file-contract" iconSize="24" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" layoutX="140.0" layoutY="25.0" mnemonicParsing="false" onAction="#viewTimeRecordings" prefHeight="73.0" prefWidth="100.0" text="Time Table" textFill="#f0e9e9" AnchorPane.leftAnchor="245.0" AnchorPane.topAnchor="15.0">
+                     <graphic>
+                        <FontIcon iconColor="#e2d2d2" iconLiteral="fa-clock-o" iconSize="24" />
+                     </graphic>
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
 </AnchorPane>
