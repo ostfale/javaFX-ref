@@ -12,8 +12,9 @@
 
 .button{
     -fx-background-color: -bg-button;
+    -fx-effect: dropshadow( three-pass-box , rgba(155, 150, 150, 0.6), 5, 0.0 , 0 , 1 );
 }
 
 .button:hover{
-    -fx-background-color: -hover;
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
 }
