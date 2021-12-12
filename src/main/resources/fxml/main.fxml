@@ -8,13 +8,13 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" styleClass="background-pane" stylesheets="@../static/css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.ostfale.app.MainController">
    <children>
-      <BorderPane layoutX="189.0" layoutY="63.0" prefHeight="200.0" prefWidth="736.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+      <BorderPane fx:id="bp_root" layoutX="189.0" layoutY="63.0" prefHeight="200.0" prefWidth="736.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
          <top>
             <AnchorPane BorderPane.alignment="CENTER">
                <children>
-                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#viewDashboard" prefHeight="73.0" prefWidth="100.0" text="Dashboard" textFill="#f0e9e9" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#viewTableViewExample" prefHeight="73.0" prefWidth="100.0" text="Table View" textFill="#f0e9e9" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="15.0">
                      <graphic>
-                        <FontIcon iconColor="#e2d2d2" iconLiteral="fa-dashboard" iconSize="24" />
+                        <FontIcon iconColor="#e2d2d2" iconLiteral="fas-table" iconSize="24" />
                      </graphic>
                      <font>
                         <Font size="14.0" />
@@ -47,6 +47,9 @@
                </children>
             </AnchorPane>
          </top>
+         <center>
+            <AnchorPane fx:id="ap_main" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>
