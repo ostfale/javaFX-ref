@@ -38,7 +38,7 @@ public class MainController extends BaseController<Void> {
         AnchorPane.setTopAnchor(ap, 0.0);
         AnchorPane.setBottomAnchor(ap, 0.0);
         AnchorPane.setRightAnchor(ap, 0.0);
-        AnchorPane.setLeftAnchor(ap, 0.0);
+        AnchorPane.setLeftAnchor(ap, 15.0);
         ap_main.getChildren().add(ap);
     }
 

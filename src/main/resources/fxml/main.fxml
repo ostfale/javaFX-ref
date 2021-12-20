@@ -48,7 +48,7 @@
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane fx:id="ap_main" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <AnchorPane fx:id="ap_main" BorderPane.alignment="CENTER" />
          </center>
       </BorderPane>
    </children>
