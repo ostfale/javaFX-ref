@@ -36,8 +36,8 @@ public class MainController extends BaseController<Void> {
         log.debug("View Table View styling example");
         var ap = personHandler.getUiRoot();
         AnchorPane.setTopAnchor(ap, 0.0);
-        AnchorPane.setBottomAnchor(ap, 0.0);
-        AnchorPane.setRightAnchor(ap, 0.0);
+        AnchorPane.setBottomAnchor(ap, 15.0);
+        AnchorPane.setRightAnchor(ap, 15.0);
         AnchorPane.setLeftAnchor(ap, 15.0);
         ap_main.getChildren().add(ap);
     }
