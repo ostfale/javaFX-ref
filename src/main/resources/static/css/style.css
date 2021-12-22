@@ -1,4 +1,5 @@
 @import "tableView.css";
+@import "contextMenu.css";
 
 .root {
     -bg-gradient: linear-gradient(to right, #031b1c, #142b3d);

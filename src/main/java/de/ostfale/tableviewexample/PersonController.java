@@ -4,11 +4,11 @@ import de.ostfale.MainApp;
 import de.ostfale.app.BootstrapUtil;
 import de.ostfale.common.BaseController;
 import de.ostfale.common.DataModel;
+import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,9 +18,10 @@ import java.util.ResourceBundle;
 
 public class PersonController extends BaseController<Person> {
 
-    private final Logger log = LoggerFactory.getLogger(MainApp.class);
+    private final Logger log = LoggerFactory.getLogger(PersonController.class);
 
-    private DataModel<Person> dm = new DataModel<>();
+    private final DataModel<Person> dm = new DataModel<>();
+    private final PersonService personService = new PersonService();
 
     @FXML
     private TableView<Person> tv_person;
@@ -43,14 +44,31 @@ public class PersonController extends BaseController<Person> {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         log.debug("Initialize Person controller");
-        dm.setObjectList(BootstrapUtil.createPersonList());
         col_firstName.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().firstName()));
         col_lastName.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().lastName()));
         col_gender.setCellValueFactory(p -> new SimpleObjectProperty<>(p.getValue().gender()));
         col_birthday.setCellValueFactory(p -> new SimpleObjectProperty<>(p.getValue().birthday()));
         col_email.setCellValueFactory(p -> new SimpleObjectProperty<>(p.getValue().email()));
         calculateColSize();
-        tv_person.getItems().addAll(dm.getObjectList());
+        createRowContextMenu();
+        dm.setComparator(personService.getComparator());
+        dm.updateModel(BootstrapUtil.createPersonList(),tv_person);
+    }
+
+    private void createRowContextMenu() {
+        tv_person.setRowFactory(personTableView -> {
+            final TableRow<Person> row = new TableRow<>();
+            final ContextMenu contextMenu = new ContextMenu();
+            final MenuItem addMenuItem = new MenuItem("Add Person");
+            addMenuItem.setOnAction(actionEvent -> personService.addPerson(dm));
+            contextMenu.getItems().add(addMenuItem);
+            row.contextMenuProperty().bind(
+                    Bindings.when(row.emptyProperty())
+                            .then((ContextMenu) null)
+                            .otherwise(contextMenu)
+            );
+            return row;
+        });
     }
 
     private void calculateColSize() {

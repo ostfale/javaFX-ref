@@ -1,0 +1,27 @@
+/* variable definitions */
+* {
+    -fx-menu-color: #263238;
+    -fx-menu-color-highlighted: #455a64;
+    -fx-menu-font-color: #ffffff;
+    -fx-menu-font-color-highlighted: #ffffff
+}
+
+.context-menu {
+    -fx-background-color: -fx-menu-color;
+}
+
+.menu-item {
+    -fx-background-color: -fx-menu-color;
+}
+
+.menu-item .label {
+    -fx-text-fill: -fx-menu-font-color;
+}
+
+.menu-item .label:disabled {
+    -fx-opacity: 1.0;
+}
+
+.menu-item:focused, .menu-item:hover {
+    -fx-background-color: -fx-menu-color-highlighted;
+}
