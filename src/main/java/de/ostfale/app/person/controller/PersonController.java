@@ -64,8 +64,10 @@ public class PersonController extends BaseController<Person> {
             final TableRow<Person> row = new TableRow<>();
             final ContextMenu contextMenu = new ContextMenu();
             final MenuItem addMenuItem = new MenuItem("Add Person");
+            final MenuItem removeMenuItem = new MenuItem("Delete Person");
             addMenuItem.setOnAction(actionEvent -> personService.addPerson(dm));
-            contextMenu.getItems().add(addMenuItem);
+            removeMenuItem.setOnAction(actionEvent -> personService.deletePerson(dm));
+            contextMenu.getItems().addAll(addMenuItem,removeMenuItem);
             row.contextMenuProperty().bind(
                     Bindings.when(row.emptyProperty())
                             .then((ContextMenu) null)

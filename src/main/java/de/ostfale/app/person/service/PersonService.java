@@ -17,6 +17,12 @@ public class PersonService {
         dataModel.getObjectList().add(Person.getDefault());
     }
 
+    public void deletePerson(DataModel<Person> dataModel) {
+        var selectedPerson = dataModel.getCurrentObject();
+        log.debug("Remove selected person: {} {}", selectedPerson.firstName(), selectedPerson.lastName());
+        dataModel.getObjectList().remove(selectedPerson);
+    }
+
     public Comparator<Person> getComparator() {
         log.trace("Get Person comparator");
         return (p1, p2) -> {
