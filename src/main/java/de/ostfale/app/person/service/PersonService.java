@@ -1,6 +1,7 @@
-package de.ostfale.tableviewexample;
+package de.ostfale.app.person.service;
 
 import de.ostfale.MainApp;
+import de.ostfale.app.person.model.Person;
 import de.ostfale.common.DataModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

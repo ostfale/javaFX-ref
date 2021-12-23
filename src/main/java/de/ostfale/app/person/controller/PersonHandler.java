@@ -1,5 +1,6 @@
-package de.ostfale.tableviewexample;
+package de.ostfale.app.person.controller;
 
+import de.ostfale.app.person.controller.PersonController;
 import de.ostfale.common.BaseHandler;
 import javafx.scene.layout.AnchorPane;
 

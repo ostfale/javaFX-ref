@@ -1,7 +1,7 @@
 package de.ostfale.app;
 
-import de.ostfale.tableviewexample.Gender;
-import de.ostfale.tableviewexample.Person;
+import de.ostfale.app.person.model.Gender;
+import de.ostfale.app.person.model.Person;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 

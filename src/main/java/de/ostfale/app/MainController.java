@@ -2,7 +2,7 @@ package de.ostfale.app;
 
 import de.ostfale.MainApp;
 import de.ostfale.common.BaseController;
-import de.ostfale.tableviewexample.PersonHandler;
+import de.ostfale.app.person.controller.PersonHandler;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

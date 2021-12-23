@@ -1,9 +1,11 @@
-package de.ostfale.tableviewexample;
+package de.ostfale.app.person.controller;
 
-import de.ostfale.MainApp;
 import de.ostfale.app.BootstrapUtil;
+import de.ostfale.app.person.model.Gender;
+import de.ostfale.app.person.model.Person;
 import de.ostfale.common.BaseController;
 import de.ostfale.common.DataModel;
+import de.ostfale.app.person.service.PersonService;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;

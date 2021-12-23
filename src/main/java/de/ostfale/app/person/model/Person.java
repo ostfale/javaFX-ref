@@ -1,4 +1,4 @@
-package de.ostfale.tableviewexample;
+package de.ostfale.app.person.model;
 
 import java.time.LocalDate;
 
