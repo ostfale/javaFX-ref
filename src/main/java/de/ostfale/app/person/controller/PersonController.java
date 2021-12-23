@@ -3,9 +3,9 @@ package de.ostfale.app.person.controller;
 import de.ostfale.app.BootstrapUtil;
 import de.ostfale.app.person.model.Gender;
 import de.ostfale.app.person.model.Person;
+import de.ostfale.app.person.service.PersonService;
 import de.ostfale.common.BaseController;
 import de.ostfale.common.DataModel;
-import de.ostfale.app.person.service.PersonService;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -23,6 +23,7 @@ public class PersonController extends BaseController<Person> {
     private final Logger log = LoggerFactory.getLogger(PersonController.class);
 
     private final DataModel<Person> dm = new DataModel<>();
+    private final PersonChangeListener changeListener = new PersonChangeListener();
     private final PersonService personService = new PersonService();
 
     @FXML
@@ -54,7 +55,8 @@ public class PersonController extends BaseController<Person> {
         calculateColSize();
         createRowContextMenu();
         dm.setComparator(personService.getComparator());
-        dm.updateModel(BootstrapUtil.createPersonList(),tv_person);
+        dm.setChangeListener(changeListener);
+        dm.updateModel(BootstrapUtil.createPersonList(), tv_person);
     }
 
     private void createRowContextMenu() {

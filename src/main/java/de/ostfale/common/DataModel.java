@@ -29,6 +29,12 @@ public class DataModel<T> {
 
     public void updateModel(List<T> aList, TableView<T> tableView) {
         log.debug("Update model for TableView");
+        if (!currentObject.isBound()) {
+            log.trace("Bind selected table row");
+            currentObject.bind(tableView.getSelectionModel().selectedItemProperty());
+            currentObject.addListener(changeListener);
+        }
+
         if (comparator != null) {
             tableView.setItems(this.getSortedList(comparator));
         } else {
