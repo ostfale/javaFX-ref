@@ -36,16 +36,13 @@ public class DataModel<T> {
         }
 
         if (comparator != null) {
-            tableView.setItems(this.getSortedList(comparator));
+            var sortedList = this.getSortedList(comparator);
+            tableView.setItems(sortedList);
+            sortedList.comparatorProperty().bind(tableView.comparatorProperty());
         } else {
             tableView.setItems(objectList);
         }
         setItemList(aList);
-    }
-
-    public void setObjectList(ObservableList<T> aList) {
-        objectList.clear();
-        objectList.addAll(aList);
     }
 
     public SortedList<T> getSortedList(Comparator<T> aComparator) {

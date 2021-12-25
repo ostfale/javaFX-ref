@@ -5,8 +5,11 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.fxml.Initializable;
 
+import java.util.Comparator;
+
 public abstract class BaseController<T> implements Initializable {
     protected DataModel<T> dataModel;
     protected BooleanProperty modifiedProperty = new SimpleBooleanProperty(false);
-    private ChangeListener<T> changeListener;
+    protected ChangeListener<T> changeListener;
+    protected Comparator<T> comparator;
 }

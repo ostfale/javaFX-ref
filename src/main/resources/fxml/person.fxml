@@ -7,9 +7,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.ostfale.app.person.controller.PersonController">
    <children>
-      <TableView fx:id="tv_person" layoutX="32.0" layoutY="27.0" prefHeight="400.0" prefWidth="800.0" stylesheets="@../static/css/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="tv_person" editable="true" layoutX="32.0" layoutY="27.0" prefHeight="400.0" prefWidth="800.0" stylesheets="@../static/css/tableView.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="col_firstName" editable="false" prefWidth="100.0" text="First Name" />
+          <TableColumn fx:id="col_firstName" prefWidth="100.0" text="First Name" />
           <TableColumn fx:id="col_lastName" prefWidth="200.0" text="Last Name" />
             <TableColumn fx:id="col_gender" prefWidth="100.0" text="Gender" />
             <TableColumn fx:id="col_birthday" prefWidth="150.0" text="Birthday" />
